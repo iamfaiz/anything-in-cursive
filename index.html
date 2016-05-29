@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Write anything in cursive</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+		<style>
+			h2 { text-align: center; }
+
+			#writing-place {
+				height: 500px;
+				font-family: 'Cedarville Cursive';
+				font-size: 2em;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2 class="text-center">Write anything in cursive!</h2>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="font-size-slider">Font Size:</label>
+						<input class="form-control" value="2" min="0" max="10" type="range" id="font-size-slider">
+					</div>
+					<div class="form-group">
+						<textarea id="writing-place" class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+
+			$(function() {
+				var $writingPlace = $('#writing-place');
+				var $fontSizeSlider = $('#font-size-slider');
+
+				$fontSizeSlider.on('input change', function (event) {
+					console.log($fontSizeSlider.val())
+					$writingPlace.css('font-size', $fontSizeSlider.val() + 'em');
+				});
+			});
+
+		</script>
+	</body>
+</html>
